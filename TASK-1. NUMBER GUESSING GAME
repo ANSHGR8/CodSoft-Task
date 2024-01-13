@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int
+main ()
+{
+
+  srand (time (0));
+  int RandomNumber = 1 + (rand () % 100);
+  int Guess;
+  int attempts = 0;
+
+  string userName;
+
+  cout << "Welcome to the Number Guessing Game by CodSoft!" << endl;
+  cout << "Enter your name: ";
+  getline (cin, userName);
+
+  cout << "Hello, " << userName <<
+    "! Try to guess the number between 1 and 100." << endl;
+
+  do
+    {
+
+      cout << "Enter your guess: ";
+      cin >> Guess;
+      attempts++;
+
+      if (Guess < RandomNumber)
+	{
+	  cout << "Too low! Try again." << endl;
+	}
+      else if (Guess > RandomNumber)
+	{
+	  cout << "Too high! Try again." << endl;
+	}
+      else
+	{
+	  cout << "\nCongratulations, " << userName <<
+	    "! You guessed the correct number in " << attempts << " attempts."
+	    << endl;
+	}
+    }
+  while (Guess != RandomNumber);
+
+  return 0;
+}
